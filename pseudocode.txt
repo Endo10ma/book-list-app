@@ -1,0 +1,62 @@
+1. App Initialization
+Start React application
+Fetch book data from public JSON on component mount
+Store the full book list in state
+
+2. State Setup
+Define state variables:
+  books            - full list of books from JSON
+  filters          - { country, language, pages, century }
+  searchTerm       - search input (title or author)
+  currentPage      - current page number for pagination
+  itemsPerPage     - number of items to show per page
+
+3. Filters Component
+Render four dropdowns:
+  - Country
+  - Language
+  - Page Range
+  - Century
+
+On filter change:
+  - Update corresponding filter state
+  - Reset currentPage to 1
+
+4. Search Bar
+Render a text input field above filters
+When user types:
+  - Update searchTerm in state
+
+5.Filtering Logic
+For each book:
+  - If country filter is set, match book.country
+  - If language filter is set, match book.language
+  - If page range is set:
+      - 0–100     → keep if pages ≤ 100
+      - 101–200   → keep if 101 ≤ pages ≤ 200
+      - 201–300   → keep if 201 ≤ pages ≤ 300
+      - 301+      → keep if pages > 300
+  - If century filter is set:
+      - Convert book.year to century
+      - Keep if within selected century
+
+6. Search Filtering
+After applying filters:
+  - Keep books where searchTerm is found in title or author (case-insensitive)
+
+7. Pagination Logic
+From filtered + searched results:
+  - startIndex = (currentPage - 1) * itemsPerPage
+  - endIndex   = startIndex + itemsPerPage
+  - Show books[startIndex : endIndex]
+
+Render:
+  - “Previous” and “Next” buttons
+  - Disable buttons if at first/last page
+  - Dropdown to choose items per page (20, 50, 100)
+
+
+8. Responsive Design
+Use CSS grid for layout (auto-fit cards)
+Input and dropdowns have 100% width on small screens
+Media queries adjust layout for mobile
