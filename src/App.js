@@ -101,6 +101,11 @@ function App() {
               background: "#f9f9f9"
             }}
           >
+            <img
+              src={`https://raw.githubusercontent.com/benoitvallon/100-best-books/master/static/${book.imageLink}`}
+              alt={book.title}
+              style={{ width: "100%", height: "auto", borderRadius: "4px", marginBottom: "10px" }}
+            />
             <h3>{book.title}</h3>
             <p><strong>Author:</strong> {book.author}</p>
             <p><strong>Pages:</strong> {book.pages}</p>
