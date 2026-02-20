@@ -10,7 +10,7 @@ This is a responsive React web app that displays a curated list of 100 classic b
 ---
 
 ## Live Demo
-Try it live here: [Horror Story Blog](https://book-list-app-zeta.vercel.app/)
+Try it live here: [Book List APP](https://book-list-app-zeta.vercel.app/)
 
 ##  How to Run This App Locally
 
